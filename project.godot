@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Chess"
+run/main_scene="res://scenes/main_scene.tscn"
+config/icon="res://icon.png"
+target_fps=0
+
+[display]
+
+window/size/width=192
+window/size/height=192
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[image_loader]
+
+filter=false
+gen_mipmaps=false
+
+[importer_defaults]
+
+texture={
+"flags/filter": false,
+"flags/mipmaps": false
+}
+
+[input]
+
+mouse={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[render]
+
+mipmap_policy=2
