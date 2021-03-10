@@ -37,12 +37,11 @@ func _ready():
 func _process(delta):
 	mouse_click = Input.is_action_pressed("mouse")
 	if mouse_click and not mouse_clicked:
-		mouse_clicked = mouse_click
 		if is_on_top:
 			select_piece()
 		else:
 			move_to()
-	
+	mouse_clicked = mouse_click
 ####################################################
 
 #Verifies which piece is being clicked
