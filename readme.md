@@ -21,7 +21,8 @@ at the scripts.
 
 ## Known Issues
 
-1. There seems to be no checks for Check nor Checkmate.
-
+1. There os no checks for Stalemate, Check or Checkmate.
+2. Moves that puts the King in jeopardy is not prevented.
+3. There are some hard to reproduce capture bugs (seen only with pawns so far).
 
 Johan

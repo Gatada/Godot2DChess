@@ -28,6 +28,19 @@ func toggle_turn():
 	else:
 		turn = "white"
 	en_passant()
+
+
+func kingPosition(side):
+	print("Getting opponent King position")
+	var kingPosition = get_node("player_" + side).get_node("king").get_position()
+	var kingSquare = board.world_to_map(kingPosition)	
+	return kingSquare
+				
+func opponentKingPosition():
+	if turn == "white":		
+		return kingPosition("black")
+	else:
+		return kingPosition("white")
 	
 func calc_pieces():
 	print("calc pieces")

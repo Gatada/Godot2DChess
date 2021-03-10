@@ -5,9 +5,17 @@ extends Sprite
 export var which_piece = "Piece"
 onready var base = get_node("base_piece")
 
+enum KingState {
+	safe
+	stalemate
+	check
+	checkmate
+}
+
 #King only variables
-var can_cast = true
-var dead = false
+var can_castle = true
+var kingState = KingState.safe
+
 ####################################################
 
 func calc_cell(piece):
@@ -19,7 +27,7 @@ func calc_cell(piece):
 		if piece == "king":
 			print("calculating king")
 			if base.already_moved:
-				can_cast = false
+				can_castle = false
 			#Diagonal
 			base.movable_cells.append(Vector2(base.parent_cell.x -1, base.parent_cell.y -1))
 			base.movable_cells.append(Vector2(base.parent_cell.x +1, base.parent_cell.y +1))

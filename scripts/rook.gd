@@ -5,7 +5,7 @@ export var which_piece = "Piece"
 onready var base = get_node("base_piece")
 
 #Rook only variables
-var can_cast = true
+var can_castle = true
 export var rook_var = 0
 ####################################################
 
@@ -18,7 +18,7 @@ func calc_cell(piece):
 		if piece == "rook":
 			print("calculating rook")
 			if base.already_moved:
-				can_cast = false
+				can_castle = false
 			for i in range(1,8):
 				var cell = Vector2(base.parent_cell.x, base.parent_cell.y -i)
 				if cell in base.controller.pieces_cells:
