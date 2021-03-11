@@ -28,72 +28,72 @@ script = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 1, 0, 0, 2, 1, 0, 3, 0, 0, 4, 1, 0, 5, 0, 0, 6, 1, 0, 7, 0, 0, 65536, 0, 0, 65537, 1, 0, 65538, 0, 0, 65539, 1, 0, 65540, 0, 0, 65541, 1, 0, 65542, 0, 0, 65543, 1, 0, 131072, 1, 0, 131073, 0, 0, 131074, 1, 0, 131075, 0, 0, 131076, 1, 0, 131077, 0, 0, 131078, 1, 0, 131079, 0, 0, 196608, 0, 0, 196609, 1, 0, 196610, 0, 0, 196611, 1, 0, 196612, 0, 0, 196613, 1, 0, 196614, 0, 0, 196615, 1, 0, 262144, 1, 0, 262145, 0, 0, 262146, 1, 0, 262147, 0, 0, 262148, 1, 0, 262149, 0, 0, 262150, 1, 0, 262151, 0, 0, 327680, 0, 0, 327681, 1, 0, 327682, 0, 0, 327683, 1, 0, 327684, 0, 0, 327685, 1, 0, 327686, 0, 0, 327687, 1, 0, 393216, 1, 0, 393217, 0, 0, 393218, 1, 0, 393219, 0, 0, 393220, 1, 0, 393221, 0, 0, 393222, 1, 0, 393223, 0, 0, 458752, 0, 0, 458753, 1, 0, 458754, 0, 0, 458755, 1, 0, 458756, 0, 0, 458757, 1, 0, 458758, 0, 0, 458759, 1, 0 )
 
-[node name="player_white" type="Node2D" parent="." groups=[
-"white",
+[node name="player_0" type="Node2D" parent="." groups=[
+"0",
 ]]
-position = Vector2( -12, -12 )
+position = Vector2( -12.4356, -12 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="pawn" parent="player_white" groups=[
-"white",
+[node name="pawn" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 12, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn1" parent="player_white" groups=[
-"white",
+[node name="pawn1" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 36, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn2" parent="player_white" groups=[
-"white",
+[node name="pawn2" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 60, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn3" parent="player_white" groups=[
-"white",
+[node name="pawn3" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 84, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn4" parent="player_white" groups=[
-"white",
+[node name="pawn4" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 108, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn5" parent="player_white" groups=[
-"white",
+[node name="pawn5" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 132, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn6" parent="player_white" groups=[
-"white",
+[node name="pawn6" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 156, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="pawn7" parent="player_white" groups=[
-"white",
+[node name="pawn7" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 3 )]
 position = Vector2( 180, 156 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="rook" parent="player_white" groups=[
-"white",
+[node name="rook" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 5 )]
 position = Vector2( 12, 180 )
 texture = ExtResource( 6 )
@@ -101,8 +101,8 @@ centered = false
 which_piece = "rook"
 rook_var = 1
 
-[node name="rook1" parent="player_white" groups=[
-"white",
+[node name="rook1" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 5 )]
 position = Vector2( 180, 180 )
 texture = ExtResource( 6 )
@@ -110,118 +110,118 @@ centered = false
 which_piece = "rook"
 rook_var = -1
 
-[node name="bishop" parent="player_white" groups=[
-"white",
+[node name="bishop" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 7 )]
 position = Vector2( 60, 180 )
 texture = ExtResource( 8 )
 centered = false
 
-[node name="bishop1" parent="player_white" groups=[
-"white",
+[node name="bishop1" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 7 )]
 position = Vector2( 132, 180 )
 texture = ExtResource( 8 )
 centered = false
 
-[node name="king" parent="player_white" groups=[
-"white",
+[node name="king" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 9 )]
 position = Vector2( 108, 180 )
 texture = ExtResource( 10 )
 centered = false
 which_piece = "king"
 
-[node name="queen" parent="player_white" groups=[
-"white",
+[node name="queen" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 11 )]
 position = Vector2( 84, 180 )
 texture = ExtResource( 12 )
 centered = false
 which_piece = "queen"
 
-[node name="knight" parent="player_white" groups=[
-"white",
+[node name="knight" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 13 )]
 position = Vector2( 36, 180 )
 texture = ExtResource( 14 )
 centered = false
 which_piece = "knight"
 
-[node name="knight1" parent="player_white" groups=[
-"white",
+[node name="knight1" parent="player_0" groups=[
+"0",
 ] instance=ExtResource( 13 )]
 position = Vector2( 156, 180 )
 texture = ExtResource( 14 )
 centered = false
 which_piece = "knight"
 
-[node name="player_black" type="Node2D" parent="." groups=[
-"black",
+[node name="player_1" type="Node2D" parent="." groups=[
+"1",
 ]]
 position = Vector2( -12, -12 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="pawn" parent="player_black" groups=[
-"black",
+[node name="pawn" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 12, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn1" parent="player_black" groups=[
-"black",
+[node name="pawn1" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 36, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn2" parent="player_black" groups=[
-"black",
+[node name="pawn2" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 60, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn3" parent="player_black" groups=[
-"black",
+[node name="pawn3" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 84, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn4" parent="player_black" groups=[
-"black",
+[node name="pawn4" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 108, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn5" parent="player_black" groups=[
-"black",
+[node name="pawn5" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 132, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn6" parent="player_black" groups=[
-"black",
+[node name="pawn6" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 156, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="pawn7" parent="player_black" groups=[
-"black",
+[node name="pawn7" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 3 )]
 position = Vector2( 180, 36 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="rook" parent="player_black" groups=[
-"black",
+[node name="rook" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 5 )]
 position = Vector2( 12, 12 )
 texture = ExtResource( 16 )
@@ -229,8 +229,8 @@ centered = false
 which_piece = "rook"
 rook_var = 1
 
-[node name="rook1" parent="player_black" groups=[
-"black",
+[node name="rook1" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 5 )]
 position = Vector2( 180, 12 )
 texture = ExtResource( 16 )
@@ -238,46 +238,46 @@ centered = false
 which_piece = "rook"
 rook_var = -1
 
-[node name="bishop" parent="player_black" groups=[
-"black",
+[node name="bishop" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 7 )]
 position = Vector2( 60, 12 )
 texture = ExtResource( 17 )
 centered = false
 
-[node name="bishop1" parent="player_black" groups=[
-"black",
+[node name="bishop1" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 7 )]
 position = Vector2( 132, 12 )
 texture = ExtResource( 17 )
 centered = false
 
-[node name="king" parent="player_black" groups=[
-"black",
+[node name="king" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 9 )]
 position = Vector2( 108, 12 )
 texture = ExtResource( 18 )
 centered = false
 which_piece = "king"
 
-[node name="queen" parent="player_black" groups=[
-"black",
+[node name="queen" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 11 )]
 position = Vector2( 84, 12 )
 texture = ExtResource( 19 )
 centered = false
 which_piece = "queen"
 
-[node name="knight" parent="player_black" groups=[
-"black",
+[node name="knight" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 13 )]
 position = Vector2( 36, 12 )
 texture = ExtResource( 20 )
 centered = false
 which_piece = "knight"
 
-[node name="knight1" parent="player_black" groups=[
-"black",
+[node name="knight1" parent="player_1" groups=[
+"1",
 ] instance=ExtResource( 13 )]
 position = Vector2( 156, 12 )
 texture = ExtResource( 20 )

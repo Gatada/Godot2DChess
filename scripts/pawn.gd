@@ -14,7 +14,7 @@ func calc_cell(piece):
 	#Checks if is selected and turn the movement according
 	#to the type of cell being selected
 
-	if self.is_in_group("black"):
+	if self.is_in_group(str(base.controller.Player.black)):
 		turn = -1
 	if base.is_selected:
 		#Calculation for the pawn piece

@@ -21,11 +21,11 @@ onready var parent = get_node("..")
 onready var board = get_node("/root/main_scene/board")
 onready var controller = get_node("/root/main_scene")
 
-onready var kingWhite = controller.get_node("player_white").get_node("king")
-onready var kingBlack = controller.get_node("player_black").get_node("king")
+onready var kingWhite = controller.get_node("player_0").get_node("king")
+onready var kingBlack = controller.get_node("player_1").get_node("king")
 
 func kingThisTurn():
-	if controller.turn == "white":
+	if controller.turn == controller.Player.white:
 		return kingWhite
 	else:
 		return kingBlack
@@ -34,7 +34,7 @@ func _ready():
 	set_process(true)
 ####################################################
 
-func _process(delta):
+func _process(_delta):
 	mouse_click = Input.is_action_pressed("mouse")
 	if mouse_click and not mouse_clicked:
 		if is_on_top:
@@ -48,35 +48,43 @@ func _process(delta):
 func _on_base_piece_mouse_enter():
 	is_on_top = true
 	controller.who = parent
+	print("hovering " + parent.name)
 	
 func _on_base_piece_mouse_exit():
 	is_on_top = false
+	print("exited " + parent.name)
+
 ###################################################
 
-func select_piece():	
+func select_piece():
+	
+	print("Turn: " + str(controller.turn))
 	
 	#Toggle between selected and unselected
 	if is_selected == false and parent.is_in_group(str(controller.turn)):
 		is_selected = true
 		movable_cells.clear()
 		parent.calc_cell(parent.which_piece)
+		print("selected " + parent.name)
 
 	else:
 		is_selected = false
 		movable_cells.clear()
 		opponent_pieces.clear()
-		print("deselected")
+		print("deselected " + parent.name)
 ####################################################
 
 func move_to():
 
 	selected_cell = board.world_to_map(get_viewport().get_mouse_position())
-	print("Selected cell: " + str(selected_cell))
 	
 # Check if King state - prevent move unless it keeps or makes King safe
 	var king = kingThisTurn()
 	if king.kingState != king.KingState.safe:
-		# King is not safe, so not possible to select another piece
+		
+		# TODO: Check if King can be saved by another piece.
+		# TEMP: King is not safe, prevent selection of other pieces.
+		
 		print("King not safe; can't select another piece")
 		return
 
@@ -133,18 +141,19 @@ func move_to():
 			
 			# Check if the King is attacked
 			# - Clear valid moves, as they are now outdated.
-			# - Calculate valid moves for selected piece in new position.
+			# - Calculate new valid moves for selected piece in new position.
 			# - Check if new move list includes a square that is occupied by the opposing King
+			
 			movable_cells.clear()
 			
 			var kingSquare = controller.opponentKingPosition()
-			parent.calc_cell(parent.which_piece)			
+			parent.calc_cell(parent.which_piece)
 			
 			var opponentKingIsAttacked = false
 			for move in movable_cells:
 				var square = board.get_cell(move.x, move.y)
 				
-				if square > -1:
+				if square == 1: # Disregard empty squares
 					
 					print("Valid move: " + str(square))
 					
@@ -154,9 +163,13 @@ func move_to():
 			
 			print("King is checked: " + str(opponentKingIsAttacked))
 			if opponentKingIsAttacked:
-				if controller.turn == "white":
-					var opponentKing = controller.get_node("player_black").get_node("king")
-					opponentKing.kingState = opponentKing.KingState.check
+				var opponentKing
+				if controller.turn == controller.Player.white:
+					opponentKing = controller.get_node("player_1").get_node("king")
+				else:
+					opponentKing = controller.get_node("player_0").get_node("king")
+				opponentKing.kingState = opponentKing.KingState.check
+					
 					
 					# TODO: Check for stalemate too.
 					# TODO: We also need to check for checkmate
@@ -171,3 +184,30 @@ func move_to():
 
 func _on_base_piece_exit_tree():
 	print("I " + str(parent.get_name()) + " was captured")
+	
+	
+func can_attack_king():
+	
+	# Check if player's King is attacked
+	# - Calculate valid moves for selected piece in new position.
+	# - Check if new move list includes a square that is occupied by the opposing King
+
+	if not is_selected:
+		movable_cells.clear()
+		parent.calc_cell(parent.which_piece)
+	
+	var kingSquare = controller.opponentKingPosition()
+	var can_attack = false
+	
+	for move in movable_cells:
+		var square = board.get_cell(move.x, move.y)
+		
+		if square == 1: # Disregard empty squares
+			
+			print("Valid move: " + str(square))
+			
+			var isAttackingKing = move == kingSquare
+			if isAttackingKing:
+				can_attack = true
+	
+	return can_attack
