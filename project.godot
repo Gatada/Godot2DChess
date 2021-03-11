@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Chess"
+config/name="Godot2DChess"
 run/main_scene="res://scenes/main_scene.tscn"
 config/icon="res://icon.png"
 target_fps=0
